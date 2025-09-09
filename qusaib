@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html dir='rtl' lang='ar' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>عرب الرماضين - القرآن الكريم</title>
+    <link href='https://fonts.googleapis.com/css2?family=Tajawal&amp;display=swap' rel='stylesheet'/>
+    <link crossorigin='anonymous' href='style.css' rel='stylesheet'/>
+    <script src='https://cdn.tailwindcss.com' type='text/javascript'/>
+    <b:skin><![CDATA[
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f5f0;
+            color: #2c3e50;
+        }
+        .header-title {
+            font-size: 72px;
+            color: #1a5276;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .news-ticker {
+            background-color: #1a5276;
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .news-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .quran-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .riwaya-card {
+            transition: all 0.3s ease;
+        }
+        .riwaya-card.active {
+            background-color: #fef3c7;
+            transform: translateY(-2px);
+        }
+    ]]></b:skin>
+</head>
+<body class='min-h-screen'>
+    <header class='py-8 px-4 text-center'>
+        <nav class='mb-6'>
+            <ul class='flex justify-center space-x-8 text-lg'>
+                <li><a class='hover:text-amber-600' href='#'>الرئيسية</a></li>
+                <li><a class='hover:text-amber-600' href='#'>الروايات</a></li>
+                <li><a class='hover:text-amber-600' href='#'>التفسير</a></li>
+                <li><a class='hover:text-amber-600' href='#'>الأدعية</a></li>
+            </ul>
+        </nav>
+        <h1 class='header-title font-bold'>عرب الرماضين</h1>
+    </header>
+
+    <!-- قسم بلوجر الرئيسي لعرض المشاركات أو الأدوات -->
+    <b:section class='main-section' id='main' maxwidgets='1' name='Main' showaddelement='yes'>
+      <b:widget id='PageList1' locked='false' title='الصفحات' type='PageList'>
+        <b:widget-settings>
+          <b:widget-setting name='pageListJson'><![CDATA[{"4537597384871301971":{"href":"https://aramadeen.blogspot.com/p/blog-page_97.html","position":10,"title":"عاصم الكوفي "},"260599773504196000":{"href":"https://aramadeen.blogspot.com/p/blog-page_19.html","position":8,"title":"الكسائي "},"6279576756079617593":{"href":"https://aramadeen.blogspot.com/p/blog-page_2.html","position":2,"title":"سياسة الخصوصية"},"3847787359224576104":{"href":"https://aramadeen.blogspot.com/p/blog-page_41.html","position":11,"title":"ابن عامر الشامي "},"6318239535009439982":{"href":"https://aramadeen.blogspot.com/p/blog-page_61.html","position":7,"title":"أبو جعفر المدني "},"4506535166864145720":{"href":"https://aramadeen.blogspot.com/p/blog-page_87.html","position":3,"title":"اتصل بنا"},"1769391648790973638":{"href":"https://aramadeen.blogspot.com/p/blog-page_23.html","position":1,"title":"البث المباشر"},"link0":{"href":"http://aramadeen.blogspot.com/","position":0,"title":"الصفحة الرئيسية"},"1820703285685178764":{"href":"https://aramadeen.blogspot.com/p/blog-page_13.html","position":4,"title":"من نحن"},"8419803244084879255":{"href":"https://aramadeen.blogspot.com/p/blog-page_96.html","position":9,"title":"حمزة الزيات "},"6524917535967947139":{"href":"https://aramadeen.blogspot.com/p/blog-page_84.html","position":12,"title":"أبو عمرو البصري "},"974281999453637503":{"href":"https://aramadeen.blogspot.com/p/blog-page_3.html","position":5,"title":"خلف العاشر "},"3195054552547627987":{"href":"https://aramadeen.blogspot.com/p/blog-page_18.html","position":6,"title":"يعقوب الحضرمي "}}]]></b:widget-setting>
+          <b:widget-setting name='homeTitle'>الصفحة الرئيسية</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
+  <div class='widget-content'>
+    <b:if cond='data:mobile'>
+      <select expr:id='data:widget.instanceId + &quot;_select&quot;'>
+        <b:if cond='data:showPlaceholder'>
+          <option disabled='disabled' hidden='hidden' value=''>
+            <b:attr cond='!data:hasCurrentPage' name='selected' value='selected'/>
+            <b:message name='messages.moveToPage'/>
+          </option>
+        </b:if>
+        <b:loop values='data:links' var='link'>
+          <option expr:value='data:link.href'>
+            <b:attr cond='data:link.isCurrentPage' name='selected' value='selected'/>
+            <data:link.title/>
+          </option>
+        </b:loop>
+      </select>
+      <span class='pagelist-arrow'>&amp;#9660;</span>
+    <b:else/>
+      <ul>
+        <b:loop values='data:links' var='link'>
+          <li>
+            <b:class cond='data:link.isCurrentPage' name='selected'/>
+            <a expr:href='data:link.href'><data:link.title/></a>
+          </li>
+        </b:loop>
+      </ul>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+      </b:widget>
+    </b:section>
+
+    <div class='news-ticker py-2 mb-8'>
+        <div class='news-content'>
+            <span class='px-4'>&#65021; شهر رمضان الذي أنزل فيه القرآن هدى للناس وبينات من الهدى والفرقان</span>
+            <span class='px-4'>&#8226; تلاوة القرآن في رمضان لها فضل عظيم &#8226;</span>
+            <span class='px-4'>&#65021; شهر رمضان الذي أنزل فيه القرآن هدى للناس وبينات من الهدى والفرقان</span>
+        </div>
+    </div>
+
+    <main class='container mx-auto px-4 pb-12'>
+        <div class='quran-section p-6 mb-8'>
+            <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6'>
+                <div class='riwaya-card active bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>حفص</h3>
+                    <p class='text-gray-600 mt-1'>عن عاصم</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>ورش</h3>
+                    <p class='text-gray-600 mt-1'>عن نافع</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>قالون</h3>
+                    <p class='text-gray-600 mt-1'>عن نافع</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>الدوري</h3>
+                    <p class='text-gray-600 mt-1'>عن أبي عمرو</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>السوسي</h3>
+                    <p class='text-gray-600 mt-1'>عن أبي عمرو</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>البزي</h3>
+                    <p class='text-gray-600 mt-1'>عن ابن كثير</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>قنبل</h3>
+                    <p class='text-gray-600 mt-1'>عن ابن كثير</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>ابن كثير</h3>
+                    <p class='text-gray-600 mt-1'>عن عبد الله</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>ابن عامر</h3>
+                    <p class='text-gray-600 mt-1'>عن يحيى</p>
+                </div>
+                <div class='riwaya-card bg-white p-4 rounded-lg shadow-md text-center cursor-pointer transition-all hover:shadow-lg'>
+                    <h3 class='text-lg font-bold text-amber-600'>أبو جعفر</h3>
+                    <p class='text-gray-600 mt-1'>عن يزيد</p>
+                </div>
+            </div>
+
+            <!-- هنا سيتم عرض محتوى الرواية -->
+            <div class='bg-white p-6 rounded-lg shadow mt-6' id='riwaya-content'>
+                <p>اختر رواية لعرض المحتوى هنا.</p>
+            </div>
+        </div>
+
+        <div class='text-center py-8'>
+            <h2 class='text-2xl font-bold mb-4'>رياض الصالحين</h2>
+            <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                <div class='bg-white p-6 rounded-lg shadow'>
+                    <h3 class='text-xl font-medium mb-3'>فضل الصيام</h3>
+                    <p class='text-gray-700'>قال رسول الله ﷺ: &quot;من صام رمضان إيمانا&#1611; واحتسابا&#1611; غفر له ما تقدم من ذنبه&quot;</p>
+                </div>
+                <div class='bg-white p-6 rounded-lg shadow'>
+                    <h3 class='text-xl font-medium mb-3'>فضل القيام</h3>
+                    <p class='text-gray-700'>قال رسول الله ﷺ: &quot;من قام رمضان إيمانا&#1611; واحتسابا&#1611; غفر له ما تقدم من ذنبه&quot;</p>
+                </div>
+                <div class='bg-white p-6 rounded-lg shadow'>
+                    <h3 class='text-xl font-medium mb-3'>فضل القرآن</h3>
+                    <p class='text-gray-700'>قال رسول الله ﷺ: &quot;اقرؤوا القرآن فإنه يأتي شفيعا&#1611; لأصحابه يوم القيامة&quot;</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class='bg-gray-100 py-8 text-center'>
+        <p class='text-gray-600'>&#169; 2023 عرب الرماضين - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script type='text/javascript'>
+        // بيانات الروايات مع النص&#1548; رابط الصوت&#1548; ورابط إضافي
+        const riwayaData = {
+            &quot;حفص&quot;: {
+                text: &quot;رواية حفص عن عاصم هي أشهر روايات القرآن الكريم وأكثرها انتشار&#1611;ا.&quot;,
+                audio: &quot;audio/hafs.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%AD%D9%81%D8%B5_%D8%B9%D9%86_%D8%B9%D8%A7%D8%B5%D9%85&quot;
+            },
+            &quot;ورش&quot;: {
+                text: &quot;رواية ورش عن نافع من الروايات المشهورة في قراءة القرآن.&quot;,
+                audio: &quot;audio/warsh.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D9%88%D8%B1%D8%B4_%D8%B9%D9%86_%D9%86%D8%A7%D9%81%D8%B9&quot;
+            },
+            &quot;قالون&quot;: {
+                text: &quot;رواية قالون عن نافع تتميز ببعض الفروق في النطق.&quot;,
+                audio: &quot;audio/qalon.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%84%D9%88%D9%86_%D8%B9%D9%86_%D9%86%D8%A7%D9%81%D8%B9&quot;
+            },
+            &quot;الدوري&quot;: {
+                text: &quot;رواية الدوري عن أبي عمرو من القراءات العشر المعروفة.&quot;,
+                audio: &quot;audio/douri.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A_%D8%B9%D9%86_%D8%A3%D8%A8%D9%8A_%D8%B9%D9%85%D8%B1%D9%88&quot;
+            },
+            &quot;السوسي&quot;: {
+                text: &quot;رواية السوسي عن أبي عمرو تتميز بخصائص فريدة.&quot;,
+                audio: &quot;audio/sousi.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B3%D9%88%D8%B3%D9%8A_%D8%B9%D9%86_%D8%A3%D8%A8%D9%8A_%D8%B9%D9%85%D8%B1%D9%88&quot;
+            },
+            &quot;البزي&quot;: {
+                text: &quot;رواية البزي عن ابن كثير من القراءات المعروفة.&quot;,
+                audio: &quot;audio/bazzi.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A8%D8%B2%D9%8A_%D8%B9%D9%86_%D8%A7%D8%A8%D9%86_%D9%83%D8%AB%D9%8A%D8%B1&quot;
+            },
+            &quot;قنبل&quot;: {
+                text: &quot;رواية قنبل عن ابن كثير تتميز ببعض الخصائص.&quot;,
+                audio: &quot;audio/qunbul.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D9%82%D9%86%D8%A8%D9%84_%D8%B9%D9%86_%D8%A7%D8%A8%D9%86_%D9%83%D8%AB%D9%8A%D8%B1&quot;
+            },
+            &quot;ابن كثير&quot;: {
+                text: &quot;رواية ابن كثير عن عبد الله من القراءات المعروفة.&quot;,
+                audio: &quot;audio/ibn_kathir.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D9%83%D8%AB%D9%8A%D8%B1_%D8%B9%D9%86_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%84%D9%87&quot;
+            },
+            &quot;ابن عامر&quot;: {
+                text: &quot;رواية ابن عامر عن يحيى من القراءات العشر.&quot;,
+                audio: &quot;audio/ibn_amer.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D8%B9%D8%A7%D9%85%D8%B1_%D8%B9%D9%86_%D9%8A%D8%AD%D9%8A%D9%89&quot;
+            },
+            &quot;أبو جعفر&quot;: {
+                text: &quot;رواية أبو جعفر عن يزيد من القراءات المعروفة.&quot;,
+                audio: &quot;audio/abu_jafar.mp3&quot;,
+                link: &quot;https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88_%D8%AC%D8%B9%D9%81%D8%B1_%D8%B9%D9%86_%D9%8A%D8%B2%D9%8A%D8%AF&quot;
+            }
+        };
+
+        // وظيفة التفاعل مع البطاقات
+        document.querySelectorAll(&#39;.riwaya-card&#39;).forEach(function(card) {
+            card.addEventListener(&#39;click&#39;, function() {
+                // إزالة التحديد من جميع البطاقات
+                document.querySelectorAll(&#39;.riwaya-card&#39;).forEach(function(c) {
+                    c.classList.remove(&#39;active&#39;, &#39;ring-2&#39;, &#39;ring-amber-500&#39;);
+                });
+                // إضافة التحديد للبطاقة المختارة
+                card.classList.add(&#39;active&#39;, &#39;ring-2&#39;, &#39;ring-amber-500&#39;);
+
+                // جلب اسم الرواية
+                const riwayaName = card.querySelector(&#39;h3&#39;).textContent.trim();
+                const contentDiv = document.getElementById(&#39;riwaya-content&#39;);
+
+                if (riwayaData[riwayaName]) {
+                    const data = riwayaData[riwayaName];
+                    contentDiv.innerHTML = `
+                        <h3 class='text-xl font-bold mb-2'>${riwayaName}</h3>
+                        <p>${data.text}</p>
+                        <audio class='w-full mt-4' controls='controls' preload='none'>
+                            <source src='${data.audio}' type='audio/mpeg'/>
+                            متصفحك لا يدعم تشغيل الصوت.
+                        </audio>
+                        <p class='mt-2'>
+                            <a class='text-amber-600 hover:underline' href='${data.link}' target='_blank'>رابط المزيد</a>
+                        </p>
+                    `;
+                } else {
+                    contentDiv.innerHTML = `<p>لا يوجد محتوى متاح لهذه الرواية.</p>`;
+                }
+            });
+        });
+
+        // لتشغيل محتوى البطاقة الأولى تلقائيا&#1611; عند تحميل الصفحة
+        window.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+            var firstCard = document.querySelector(&#39;.riwaya-card.active&#39;);
+            if (firstCard) firstCard.click();
+        });
+    </script>
+</body>
+</html>
